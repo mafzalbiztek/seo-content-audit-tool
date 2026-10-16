@@ -1,21 +1,15 @@
-# SEO Blog Content Audit
+# SEO Content Audit — Deduplicated v2
 
-A static, single-page content audit tool for Biztek Apps.
+Deploy this static folder to Vercel. Open index.html locally to use without hosting.
 
-## Run locally
-Open `index.html` in Chrome, Edge, or Firefox. No installation or server required.
+## Changes
+- Existing 52 diagnostic checklist questions and legacy JSON IDs remain unchanged.
+- Removed automatic weighted checklist score to prevent duplicate penalties.
+- Added a unique issue register linking one finding to multiple checklist IDs.
+- Added eight manually rated dimensions with approved weights: 15,15,20,15,10,10,10,5.
+- Overall weighted score appears only when all eight dimensions have ratings.
+- Added issue references and rubric version to CSV export.
+- Existing single-audit JSON files and backup JSON files can be imported; missing new fields initialize blank.
 
-## Deploy to Vercel
-1. Upload this folder to a GitHub repository.
-2. In Vercel, select **Add New > Project**, import the repository.
-3. Framework preset: **Other**. No build command required. Output directory: leave blank.
-4. Click **Deploy**.
-
-Alternatively, install Vercel CLI and run `vercel` from this folder.
-
-## Data and scoring
-- Audits are stored in browser `localStorage` only. No server database, accounts, or cross-device sync.
-- Use **Backup all JSON** regularly; import backups to restore data.
-- Export CSV for spreadsheet analysis.
-- Score is a *provisional weighted checklist pass rate*. Each category's pass fraction is multiplied by its proposed category weight, then normalized over categories with answered Pass/Issue items. N/A and unanswered items are excluded. This is not a validated writer performance score.
-- Scores should not be compared across writers until responsibility ownership, evidence rules, and scoring are finalized.
+## Important
+The checklist groups' original proposed weights remain visible for historical reference, but do not drive the writer score. The unique issue register does not automatically set ratings. Review each issue's evidence and score each dimension independently. Export JSON backups regularly; browser localStorage is not server-backed.
